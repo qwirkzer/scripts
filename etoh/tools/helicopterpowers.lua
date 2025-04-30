@@ -7,7 +7,7 @@ newtool.RequiresHandle = false
 
 local localScript = Instance.new("LocalScript")
 local co1 = coroutine.create(function()
-    local u1 = script.Parent
+    local u1 = newtool
 local v2 = game:GetService("Players").LocalPlayer
 local v3 = v2:GetMouse()
 local v4 = nil
