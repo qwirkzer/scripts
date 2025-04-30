@@ -4,6 +4,7 @@ newtool.ToolTip = "I can see my house from here!"
 newtool.TextureId = "rbxassetid://6235245591"
 newtool.CanBeDropped = false
 newtool.RequiresHandle = false
+newtool.ManualActivationOnly = true
 
 local localScript = Instance.new("LocalScript")
 local co1 = coroutine.create(function()
