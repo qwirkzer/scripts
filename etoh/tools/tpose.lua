@@ -4,10 +4,11 @@ newtool.ToolTip = "Assert dominance"
 newtool.TextureId = "http://www.roblox.com/asset/?id=6869582429"
 newtool.CanBeDropped = false
 newtool.RequiresHandle = false
+newtool.ManualActivationOnly = true
 
 local localScript = Instance.new("LocalScript")
 local co1 = coroutine.create(function()
-    local u1 = script.Parent
+    local u1 = newtool
 local v2 = game:GetService("Players").LocalPlayer
 local v3 = v2:GetMouse()
 local v4 = nil
