@@ -119,7 +119,7 @@ for i, v in pairs(game.Workspace.Towers:GetChildren()) do
                     game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(
                         game.Workspace:FindFirstChild('RestartBrick', true).CFrame
                     )
-                    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+                    -- game.Players.LocalPlayer.Character.Humanoid.Health = 0
                     game.Players.LocalPlayer.CharacterAdded:Wait()
                     task.wait(0.5)
                 end
