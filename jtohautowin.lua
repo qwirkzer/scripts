@@ -1,4 +1,3 @@
--- Made by @qwirkzzy <-- follow me on roblox
 local avoid = {
     'ToRoMW',
     'ToTHT',
@@ -49,6 +48,12 @@ local avoid = {
     'ToDIE',
     'ToER',
     'ToGF',
+    'ToJE',
+    'ToRoMW',
+    'ToTHT',
+    'ToBP',
+    'ToCaV',
+    'ToRT',
 }
 for i, v in pairs(game.Workspace.Towers:GetChildren()) do
     if not table.find(avoid, v.Name) and not (v.Name == 'PersistOBJs') then
@@ -98,19 +103,23 @@ for i, v in pairs(game.Workspace.Towers:GetChildren()) do
                     ) do
                         if w:IsA('BasePart') then
                             if
-                                tostring(w.TowerId.Value) == tostring(v.Name)
+                                tostring(w.TowerId.Value)
+                                == tostring(v.Name)
                             then
                                 winpad = w
                             end
                         end
                     end
-                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(
-                        winpad.CFrame
-                    )
+                    if winpad then
+                        game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(
+                            winpad.CFrame
+                        )
+                    end
                     task.wait(1)
                     game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(
                         game.Workspace:FindFirstChild('RestartBrick', true).CFrame
                     )
+                    game.Players.LocalPlayer.Character.Humanoid.Health = 0
                     game.Players.LocalPlayer.CharacterAdded:Wait()
                     task.wait(0.5)
                 end
