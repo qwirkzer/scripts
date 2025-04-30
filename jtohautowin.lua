@@ -61,6 +61,7 @@ return function(tower: string)
         currentTower = tower
     end
 for i, v in pairs(game.Workspace.Towers:GetChildren()) do
+        print(not (tower and v.Name ~= currentTower))
     if not table.find(avoid, v.Name) and v.Name ~= 'PersistOBJs' and not (tower and v.Name ~= currentTower) then
         local tpx = game.Workspace.Teleporters:FindFirstChild(v.Name)
         if not tpx then
