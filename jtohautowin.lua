@@ -55,8 +55,13 @@ local avoid = {
     'ToCaV',
     'ToRT',
 }
+return function(tower: string)
+    local currentTower = ""
+    if tower then
+        currentTower = tower
+    end
 for i, v in pairs(game.Workspace.Towers:GetChildren()) do
-    if not table.find(avoid, v.Name) and not (v.Name == 'PersistOBJs') then
+    if not table.find(avoid, v.Name) and v.Name ~= 'PersistOBJs' and not (tower and v.Name ~= currentTower) then
         local tpx = game.Workspace.Teleporters:FindFirstChild(v.Name)
         if not tpx then
             warn('Invalid teleporter [x]')
@@ -126,4 +131,5 @@ for i, v in pairs(game.Workspace.Towers:GetChildren()) do
             end
         end
     end
+end
 end
