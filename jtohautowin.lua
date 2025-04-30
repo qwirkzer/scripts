@@ -131,7 +131,7 @@ return function(tower)
                         )
                         -- game.Players.LocalPlayer.Character.Humanoid.Health = 0
                         -- game.Players.LocalPlayer.CharacterAdded:Wait()
-                        task.wait(0.5)
+                        task.wait(0.9)
                     end
                 end
             end
