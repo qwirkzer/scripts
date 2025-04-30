@@ -130,7 +130,7 @@ return function(tower)
                             game.Workspace:FindFirstChild('RestartBrick', true).CFrame
                         )
                         -- game.Players.LocalPlayer.Character.Humanoid.Health = 0
-                        game.Players.LocalPlayer.CharacterAdded:Wait()
+                        -- game.Players.LocalPlayer.CharacterAdded:Wait()
                         task.wait(0.5)
                     end
                 end
