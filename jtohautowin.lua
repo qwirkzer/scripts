@@ -1,4 +1,9 @@
-local avoid = {
+-- EToH Autowin script, made by @qwirkzzy on Roblox, thanks :)
+-- [[ services ]] --
+local Players = game:GetService('Players')
+
+-- [[ variables ]] --
+local towersToAvoid = {
     'ToRoMW',
     'ToTHT',
     'ToBP',
@@ -54,87 +59,68 @@ local avoid = {
     'ToBP',
     'ToCaV',
     'ToRT',
+    'PersistOBJs',
 }
-return function(tower)
-    local currentTower = ''
-    if tower then
-        currentTower = tower
-    end
-    for i, v in pairs(game.Workspace.Towers:GetChildren()) do
-        print(not (tower and v.Name ~= currentTower))
-        if
-            not table.find(avoid, v.Name)
-            and v.Name ~= 'PersistOBJs'
-            and not (tower and v.Name ~= currentTower)
-        then
-            local tpx = game.Workspace.Teleporters:FindFirstChild(v.Name)
+
+-- [[ function to return cuz yeh ]] --
+return function(tower: string)
+    local currentTower = tower or ''
+    for _, towerz in pairs(workspace.Towers:GetChildren()) do
+        if not table.find(avoid, towerz.Name) and not (tower and v.Name ~= currentTower) then
+            local tpx = workspace.Teleporters:FindFirstChild(towerz.Name)
             if not tpx then
                 warn('Invalid teleporter [x]')
+                print(tpx, towerz)
             else
                 local tpy = tpx:FindFirstChild('Teleporter')
                 if not tpy then
                     warn('Invalid teleporter [y]')
-                    print(tpy, v)
+                    print(tpy, towerz)
                 else
                     local tpz = tpy:FindFirstChild('TPFRAME')
                     if not tpz then
                         warn('Invalid teleporter [z]')
-                        print(tpz, v)
+                        print(tpz, towerz)
                     else
-                        game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(
-                            tpz.CFrame
-                        )
+                        Players.LocalPlayer.Character:SetPrimaryPartCFrame(tpz.CFrame)
                         task.wait(0.75)
 
                         local tool1 = Instance.new('Tool')
                         tool1.Name = 'Toxic Wings'
-                        tool1.Parent = game.Players.LocalPlayer.Character
+                        tool1.Parent = Players.LocalPlayer.Character
                         task.wait(0.2)
 
                         local tool2 = Instance.new('Tool')
                         tool2.Name = 'Heavenly Orb'
-                        tool2.Parent = game.Players.LocalPlayer.Character
+                        tool2.Parent = Players.LocalPlayer.Character
                         task.wait(0.2)
 
                         local tool3 = Instance.new('Tool')
                         tool3.Name = 'Candy Cane Grappling Hook'
-                        tool3.Parent = game.Players.LocalPlayer.Character
+                        tool3.Parent = Players.LocalPlayer.Character
                         task.wait(0.2)
 
                         local tool4 = Instance.new('Tool')
                         tool4.Name = 'Heavenly Coil'
-                        tool4.Parent = game.Players.LocalPlayer.Character
+                        tool4.Parent = Players.LocalPlayer.Character
                         task.wait(1)
+                        
                         local winpad
-                        for _, w in pairs(
-                            game.Workspace
-                                :FindFirstChild('WinPads', true)
-                                :GetChildren()
-                        ) do
-                            if w:IsA('BasePart') then
-                                if
-                                    tostring(w.TowerId.Value)
-                                    == tostring(v.Name)
-                                then
-                                    winpad = w
-                                end
+                        for _, p in pairs(workspace:FindFirstChild('WinPads', true):GetChildren()) do
+                            if p:IsA('BasePart') and p.TowerId.Value == towerz.Name then
+                                winpad = p
                             end
                         end
                         if winpad then
-                            game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(
-                                winpad.CFrame
-                            )
+                            Players.LocalPlayer.Character:SetPrimaryPartCFrame(winpad.CFrame)
                         end
                         task.wait(1)
-                        game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(
-                            game.Workspace:FindFirstChild('RestartBrick', true).CFrame
-                        )
-                        -- game.Players.LocalPlayer.Character.Humanoid.Health = 0
-                        -- game.Players.LocalPlayer.CharacterAdded:Wait()
-                        task.wait(0.9)
+                        Players.LocalPlayer.Character:SetPrimaryPartCFrame(workspace:FindFirstChild('RestartBrick', true).CFrame)
+                        task.wait(1)
                     end
                 end
             end
         end
     end
 end
+-- GGs! Again, made by qwirkz so please don't steal my script without crediting me kthx
