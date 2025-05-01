@@ -66,7 +66,7 @@ local towersToAvoid = {
 return function(tower: string)
     local currentTower = tower or ''
     for _, towerz in pairs(workspace.Towers:GetChildren()) do
-        if not table.find(avoid, towerz.Name) and not (tower and v.Name ~= currentTower) then
+        if not table.find(towersToAvoid, towerz.Name) and not (tower and v.Name ~= currentTower) then
             local tpx = workspace.Teleporters:FindFirstChild(towerz.Name)
             if not tpx then
                 warn('Invalid teleporter [x]')
