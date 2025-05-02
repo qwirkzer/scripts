@@ -63,7 +63,7 @@ local towersToAvoid = {
 }
 
 -- [[ function to return cuz yeh ]] --
-return function(tower: string)
+return function(tower: string, time: number)
     local currentTower = tower or ''
     for _, towerz in pairs(workspace.Towers:GetChildren()) do
         if not table.find(towersToAvoid, towerz.Name) and not (tower and towerz.Name ~= currentTower) then
@@ -111,6 +111,7 @@ return function(tower: string)
                                 winpad = p
                             end
                         end
+                        task.wait(time or 0)
                         if winpad then
                             Players.LocalPlayer.Character:SetPrimaryPartCFrame(winpad.CFrame)
                         end
