@@ -124,7 +124,7 @@ function Thrust()
         [5] = u11
         [6] = u7
     --]]
-    if script:IsDescendantOf(workspace) then
+    if localScript:IsDescendantOf(workspace) then
         u13 = true
         u14.Parent = Torso
         u15.Parent = Torso
