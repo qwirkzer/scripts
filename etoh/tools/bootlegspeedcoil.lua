@@ -19,6 +19,15 @@ handle.EnableFluidForces = false
 handle.CanCollide = false
 handle.Anchored = false
 
+local DENSITY = 0.01
+local FRICTION = 0.3
+local ELASTICITY = 0.2
+local FRICTION_WEIGHT = 1
+local ELASTICITY_WEIGHT = 1
+
+local physProperties = PhysicalProperties.new(DENSITY, FRICTION, ELASTICITY, FRICTION_WEIGHT, ELASTICITY_WEIGHT)
+handle.CustomPhysicalProperties = physProperties
+
 local sound = Instance.new("Sound")
 sound.SoundId = "http://www.roblox.com/asset/?id=99173388"
 sound.Looped = false
