@@ -9,12 +9,13 @@ newtool.ManualActivationOnly = true
 
 local handle = Instance.new("MeshPart")
 handle.Name = "Handle"
-handle.Color = Color3.new(0, 255, 255)
+handle.Color = Color3.new(0, 1, 1)
 handle.DoubleSided = false
 handle.Material = Enum.Material.Neon
 handle.MeshId = "http://www.roblox.com/asset/?id=16606212"
 handle.RenderFidelity = Enum.RenderFidelity.Precise
 handle.Transparency = 0.6
+handle.Size = Vector3.new(1.35, 1.35, 2.2)
 handle.EnableFluidForces = false
 handle.CanCollide = false
 handle.Anchored = false
