@@ -89,6 +89,7 @@ button.Parent = gui
 
 local localScript = Instance.new("LocalScript")
 localScript.Name = "JetpackScript"
+localScript.Parent = newtool
 
 local co1 = coroutine.create(function()
 local u1 = newtool
