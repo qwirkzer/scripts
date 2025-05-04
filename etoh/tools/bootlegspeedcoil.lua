@@ -44,7 +44,7 @@ local co1 = coroutine.create(function()
         --]]
         local v2 = game.Workspace:FindFirstChild(u1).Humanoid
         v2.WalkSpeed = v2.WalkSpeed + 4
-        script.Parent.Sound:Play()
+        localScript.Parent.Sound:Play()
     end)
     handle.Parent.Unequipped:Connect(function() --[[Anonymous function at line 9]]
         --[[
