@@ -18,6 +18,7 @@ handle.Size = Vector3.new(1.35, 1.35, 2.2)
 handle.EnableFluidForces = false
 handle.CanCollide = false
 handle.Anchored = false
+handle.Massless = true
 
 local DENSITY = 0.01
 local FRICTION = 0.3
