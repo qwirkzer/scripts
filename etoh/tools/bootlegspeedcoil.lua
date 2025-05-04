@@ -37,7 +37,7 @@ sound.SoundGroup = game.SoundService._ITEM_SOUNDS_
 local localScript = Instance.new("LocalScript")
 local co1 = coroutine.create(function()
     local u1 = game.Players.LocalPlayer.Name
-    handle.Parent.Equipped:Connect(function() --[[Anonymous function at line 3]]
+    newtool.Equipped:Connect(function() --[[Anonymous function at line 3]]
         --[[
         Upvalues:
             [1] = u1
@@ -46,7 +46,7 @@ local co1 = coroutine.create(function()
         v2.WalkSpeed = v2.WalkSpeed + 4
         localScript.Parent.Sound:Play()
     end)
-    handle.Parent.Unequipped:Connect(function() --[[Anonymous function at line 9]]
+    newtool.Unequipped:Connect(function() --[[Anonymous function at line 9]]
         --[[
         Upvalues:
             [1] = u1
