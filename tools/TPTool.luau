@@ -5,7 +5,7 @@ local Mouse = LocalPlayer:GetMouse()
 local TpTool = Instance.new("Tool")
 TpTool.Name = "Teleport Tool"
 TpTool.RequiresHandle = false
-TpTool.Parent = speaker.Backpack
+TpTool.Parent = LocalPlayer.Backpack
 TpTool.Activated:Connect(function()
 		local Char = LocalPlayer.Character or workspace:FindFirstChild(LocalPlayer.Name)
 		local HRP = Char and Char:FindFirstChild("HumanoidRootPart")
