@@ -73,7 +73,7 @@ local tools = {
 return function(tower: string, time: number)
     local currentTower = tower or ''
     for _, v in pairs(workspace.Towers:GetChildren()) do
-        if not table.find(avoid, v.Name) and not (tower and v.Name ~= currentTower) then
+        if not table.find(towersToAvoid, v.Name) and not (tower and v.Name ~= currentTower) then
             local tp = workspace.Teleporters:FindFirstChild(v.Name).Teleporter.TPFRAME
             game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(tp.CFrame)
             task.wait(0.75)
