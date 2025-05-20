@@ -44,7 +44,7 @@ sound.PlaybackRegion = NumberRange.new(0, 60000)
 sound.RollOffMaxDistance = 10000
 sound.RollOffMinDistance = 10
 sound.RollOffMode = Enum.RollOffMode.Inverse
-sound.SoundGroup = game.SoundService._ITEM_SOUNDS_
+--sound.SoundGroup = game.SoundService._ITEM_SOUNDS_
 sound.Parent = yes
 
 local mesh = Instance.new("BlockMesh")
