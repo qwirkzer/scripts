@@ -43,7 +43,7 @@ sound.PlaybackRegion = NumberRange.new(0, 60000)
 sound.RollOffMaxDistance = 10000
 sound.RollOffMinDistance = 10
 sound.RollOffMode = Enum.RollOffMode.Inverse
-sound.SoundGroup = game.SoundService._ITEM_SOUNDS_
+--sound.SoundGroup = game.SoundService._ITEM_SOUNDS_
 
 local attachment = Instance.new("Attachment")
 attachment.Name = "RightGripAttachment"
