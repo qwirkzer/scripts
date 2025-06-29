@@ -3,7 +3,7 @@ local key = "C" --key to intiate the flashback. see https://create.roblox.com/do
 local flashbacklength = 360 --how long the flashback should be stored in approx seconds
 local flashbackspeed = 0.7 --how many frames to skip during flashback (set to 0 to disable)
 
-local name = game:GetService("RbxAnalyticsService"):GetSessionId() --unique id that games cannot access but does not change on subsequent executions (used for the name of the binded function)
+local name = game:GetService("Players").LocalPlayer.UserId --used for the name of the binded function
 local frames,uis,LP,RS = {},game:GetService("UserInputService"),game:GetService("Players").LocalPlayer,game:GetService("RunService") --set some vars
 
 pcall(RS.UnbindFromRenderStep,RS,name) --unbind the function if previously binded
