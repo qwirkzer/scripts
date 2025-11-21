@@ -71,7 +71,6 @@ function flashback:Revert(char,hrp,hum)
 end
 
 local function step() --function that runs every frame
-   print(getchar, gethrp, char)
    local char = getchar()
    local hrp = gethrp(char)
    local hum = char:FindFirstChildWhichIsA("Humanoid")
