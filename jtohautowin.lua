@@ -74,12 +74,7 @@ return function(tower: string, time: number)
     local currentTower = tower or ''
     for _, v in pairs(workspace.Towers:GetChildren()) do
         if not table.find(towersToAvoid, v.Name) and not (tower and v.Name ~= currentTower) then
-            local tp = nil
-            if not workspace:FindFirstChild("Teleporters") then
-                tp = v.Teleporter:FindFirstChild("TPFRAME", true)
-            else
-                tp = workspace.Teleporters:FindFirstChild(v.Name).Teleporter.TPFRAME
-            end
+            local tp = v.Teleporter:FindFirstChild("TPFRAME", true)
             game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(tp.CFrame)
             task.wait(5.75)
             for _, tool in tools do
@@ -89,12 +84,7 @@ return function(tower: string, time: number)
                 task.wait(0.2)
             end
             task.wait(1 + (time or 0))
-            local winpad
-            for _, w in pairs(workspace:FindFirstChild('WinPads', true):GetChildren()) do
-                if w:IsA("BasePart") and tostring(w.TowerId.Value) == tostring(v.Name) then
-                    winpad = w
-                end
-            end
+            local winpad = v.WinPad
             game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(winpad.CFrame)
             task.wait(1)
             game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(workspace:FindFirstChild("RestartBrick", true).CFrame)
