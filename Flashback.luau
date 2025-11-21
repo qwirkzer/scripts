@@ -12,8 +12,8 @@ local function getchar()
    return LP.Character or LP.CharacterAdded:Wait()
 end
 
-function gethrp(c) --gethrp ripped from my env script and stripped of arguments
-return c:FindFirstChild("HumanoidRootPart") or c.RootPart or c.PrimaryPart or c:FindFirstChild("Torso") or c:FindFirstChild("UpperTorso") or c:FindFirstChildWhichIsA("BasePart")
+local function gethrp(c) --gethrp ripped from my env script and stripped of arguments
+   return c:FindFirstChild("HumanoidRootPart") or c.RootPart or c.PrimaryPart or c:FindFirstChild("Torso") or c:FindFirstChild("UpperTorso") or c:FindFirstChildWhichIsA("BasePart")
 end
 
 local flashback = {lastinput=false,canrevert=true}
