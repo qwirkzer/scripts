@@ -88,7 +88,7 @@ return function(tower: string, time: number)
                 v.Parent = game.Players.LocalPlayer.Character
                 task.wait(0.2)
             end
-            task.wait(1 + (time or 0))
+            task.wait(5 + (time or 0))
             local winpad
             for _, w in pairs(workspace:FindFirstChild('WinPads', true):GetChildren()) do
                 if w:IsA("BasePart") and tostring(w.TowerId.Value) == tostring(v.Name) then
