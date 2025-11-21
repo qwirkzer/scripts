@@ -81,14 +81,14 @@ return function(tower: string, time: number)
                 tp = workspace.Teleporters:FindFirstChild(v.Name).Teleporter.TPFRAME
             end
             game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(tp.CFrame)
-            task.wait(0.75)
+            task.wait(5.75)
             for _, tool in tools do
                 local v = Instance.new('Tool')
                 v.Name = tool
                 v.Parent = game.Players.LocalPlayer.Character
                 task.wait(0.2)
             end
-            task.wait(5 + (time or 0))
+            task.wait(1 + (time or 0))
             local winpad
             for _, w in pairs(workspace:FindFirstChild('WinPads', true):GetChildren()) do
                 if w:IsA("BasePart") and tostring(w.TowerId.Value) == tostring(v.Name) then
