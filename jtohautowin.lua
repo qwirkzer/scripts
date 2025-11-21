@@ -76,7 +76,7 @@ return function(tower: string, time: number)
         if not table.find(towersToAvoid, v.Name) and not (tower and v.Name ~= currentTower) then
             local tp = nil
             if not workspace:FindFirstChild("Teleporters") then
-                tp = v.Teleporter.TPFRAME
+                tp = v.Teleporter.Teleporter.TPFRAME
             else
                 tp = workspace.Teleporters:FindFirstChild(v.Name).Teleporter.TPFRAME
             end
