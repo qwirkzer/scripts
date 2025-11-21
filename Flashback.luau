@@ -72,6 +72,7 @@ end
 
 local function step() --function that runs every frame
    local char = getchar()
+   print(getchar, gethrp, char)
    local hrp = gethrp(char)
    local hum = char:FindFirstChildWhichIsA("Humanoid")
    if uis:IsKeyDown(Enum.KeyCode[key]) then --begin flashback
